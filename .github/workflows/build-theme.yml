@@ -1,7 +1,8 @@
 name: Build Themes
 on: 
   push: 
-    # tags:
+     tags:
+      - '**.**.**'
 
 jobs:
   create-release:

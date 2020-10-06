@@ -2,7 +2,7 @@ name: Build Themes
 on: 
   push: 
      tags:
-      - '**.**.**'
+      - "**"
 
 jobs:
   create-release:

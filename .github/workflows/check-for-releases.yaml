@@ -20,8 +20,12 @@ jobs:
           version=$(curl -sS https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest| jq -r '.tag_name')
           echo "Own repository release version: $version"
           echo "::set-output name=version::$version"
-      - name: Create new version branch
+      - name: Checkout repository
+        uses: actions/checkout@v2
         if: ${{ steps.theme-version.outputs.version != steps.repo-version.outputs.version }}
-        run: |
-          echo "New branch"
-          echo "${{ steps.theme-version.outputs.version }} - ${{ steps.repo-version.outputs.version }}" 
+      - name: Bump version and push tag
+        if: ${{ steps.theme-version.outputs.version != steps.repo-version.outputs.version }}
+        uses: tvdias/github-tagger@v0.0.2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.theme-version.outputs.version }}

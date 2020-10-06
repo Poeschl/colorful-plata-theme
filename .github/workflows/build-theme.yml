@@ -1,8 +1,8 @@
 name: Build Themes
 on: 
-  push: 
-     tags:
-      - "**"
+  push:
+    tags:
+      - '*'
 
 jobs:
   create-release:

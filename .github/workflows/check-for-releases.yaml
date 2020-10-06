@@ -1,8 +1,7 @@
 name: Check for new releases
 on: 
-  push:
-  # schedule:
-  #   - cron:  '0 0 * * *'
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs:
   check:

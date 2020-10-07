@@ -31,7 +31,24 @@ jobs:
     needs: create-release
     strategy:
       matrix:
-        color: ['{"name":"Indigo-default","selection_color":"#3f51b5","accent_color":"#7986cb","suggestion_color":"#673ab7"}']
+        color: [
+          '{"name":"Indigo-default","selection_color":"#3F51B5","accent_color":"#7986CB","suggestion_color":"#673AB7"}',
+          '{"name":"Red","selection_color":"#F44336","accent_color":"#E57373","suggestion_color":"#FF5722"}',
+          '{"name":"Pink","selection_color":"#E91E63","accent_color":"#F06292","suggestion_color":"#F44336"}',
+          '{"name":"Purple","selection_color":"#9C27B0","accent_color":"#BA68C8","suggestion_color":"#E91E63"}',
+          '{"name":"Deep-Purple","selection_color":"#673AB7","accent_color":"#9575CD","suggestion_color":"#9C27B0"}',
+          '{"name":"Blue","selection_color":"#2196F3","accent_color":"#64B5F6","suggestion_color":"#3F51B5"}',
+          '{"name":"Light-Blue","selection_color":"#03A9F4","accent_color":"#4FC3F7","suggestion_color":"#2196F3"}',
+          '{"name":"Cyan","selection_color":"#00BCD4","accent_color":"#4DD0E1","suggestion_color":"#03A9F4"}',
+          '{"name":"Teal","selection_color":"#009688","accent_color":"#4DB6AC","suggestion_color":"#00BCD4"}',
+          '{"name":"Green","selection_color":"#4CAF50","accent_color":"#81C784","suggestion_color":"#009688"}',
+          '{"name":"Light-Green","selection_color":"#8BC34A","accent_color":"#AED581","suggestion_color":"#4CAF50"}',
+          '{"name":"Lime","selection_color":"#CDDC39","accent_color":"#DCE775","suggestion_color":"#8BC34A"}',
+          '{"name":"Yellow","selection_color":"#FFEB3B","accent_color":"#FFF176","suggestion_color":"#CDDC39"}',
+          '{"name":"Amber","selection_color":"#FFC107","accent_color":"#FFD54F","suggestion_color":"#FFEB3B"}',
+          '{"name":"Orange","selection_color":"#FF9800","accent_color":"#FFB74D","suggestion_color":"#FFC107"}',
+          '{"name":"Deep-Orange","selection_color":"#FF5722","accent_color":"#FF8A65","suggestion_color":"#FF9800"}'
+        ]
     steps:
       - run: git clone https://gitlab.com/tista500/plata-theme.git .
       - name: Prepare system

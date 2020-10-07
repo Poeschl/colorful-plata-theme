@@ -31,7 +31,7 @@ jobs:
     needs: create-release
     strategy:
       matrix:
-        color: ['{"name":"Indigo (Default)","selection_color":"#3f51b5","accent_color":"#7986cb","suggestion_color":"#673ab7"}']
+        color: ['{"name":"Indigo-default","selection_color":"#3f51b5","accent_color":"#7986cb","suggestion_color":"#673ab7"}']
     steps:
       - run: git clone https://gitlab.com/tista500/plata-theme.git .
       - name: Prepare system
@@ -81,5 +81,5 @@ jobs:
         with:
           upload_url: ${{ steps.upload_url.outputs.url }}
           asset_path: build/share/themes/release.zip
-          asset_name: ${{ steps.upload_url.outputs.name }}
+          asset_name: ${{ steps.upload_url.outputs.name }}.zip
           asset_content_type: application/zip

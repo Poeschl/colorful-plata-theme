@@ -1,6 +1,6 @@
 name: Build Themes
 on: 
-  push:
+  create:
     tags:
       - '*'
 

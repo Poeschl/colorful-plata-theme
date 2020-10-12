@@ -20,7 +20,7 @@ jobs:
           echo "Own repository release version: $version"
           echo "::set-output name=version::$version"
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         if: ${{ steps.theme-version.outputs.version != steps.repo-version.outputs.version }}
       - name: Bump version and push tag
         if: ${{ steps.theme-version.outputs.version != steps.repo-version.outputs.version }}

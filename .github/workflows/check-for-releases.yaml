@@ -28,5 +28,5 @@ jobs:
         if: ${{ steps.theme-version.outputs.version != steps.repo-version.outputs.version }}
         uses: tvdias/github-tagger@v0.0.2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GH_PAT }}
           tag: ${{ steps.theme-version.outputs.version }}
